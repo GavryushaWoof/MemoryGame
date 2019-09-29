@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: blueviolet;
+}
+
+.memoryGame {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.card {
+    background-color: aqua;
+    width: calc(25% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    border-radius: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .2s;
+}
+
+.card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card_flipped {
+    transform: rotateY(180deg);
+}
+
+.card__front,
+.card__back {
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card__front {
+    transform: rotateY(180deg);
+}
+
+.timer {
+    margin: 0 auto;
+}
+
+.timer__time {
+    font-size: 90px;
+    color: black;
+}
+
+
+/* img {
+    width: 100px;
+} */
